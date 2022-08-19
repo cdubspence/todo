@@ -1,0 +1,24 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Todo web app focusing on usage of SOLID pricipals and the Creation and deletion of objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config prod.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdubspence/todo.git"
+  },
+  "author": "Casey Spence",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdubspence/todo/issues"
+  },
+  "homepage": "https://github.com/cdubspence/todo#readme",
+  "dependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
