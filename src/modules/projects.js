@@ -13,11 +13,10 @@ function Project(title, description, list) {
     this.deleteProject = function(projectName) {
         listOfProjects = listOfProjects.filter(name => name != projectName)
     }
-
-    
-
 }
-
+export function loadProjects() {
+    
+}
 export function createProject() {
 
     
