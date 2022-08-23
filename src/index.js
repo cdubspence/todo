@@ -1,5 +1,5 @@
-import { loadHomePage } from "./modules/home";
+import { loadTodayTasks } from "./modules/today";
 import { createNav } from "./modules/createNav"
  
 createNav();
-loadHomePage();
+loadTodayTasks();

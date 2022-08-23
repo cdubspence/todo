@@ -1,9 +1,10 @@
-import { loadHomePage } from "./home";
-import { loadProjects } from "./projects";
+import { loadTodayTasks } from "./today";
+import { loadThisWeeksTasks } from "./thisweek";
+import { loadCalender } from "./calendar";
 
 export function pageLoad(page) {
     const content = document.getElementById('content');
-    content.removeChild(content.childNodes[2])
+    content.removeChild(content.childNodes[3]) //is there a better way to remove current content? 
     if(page == 'todayBtn') {
         return loadTodayTasks()
     } else if (page == 'thisWeekBtn') {
@@ -13,6 +14,6 @@ export function pageLoad(page) {
     } else if(page == 'project') {
         return loadProjects()
     } else {
-       return loadHomePage()
+        loadTodayTasks()
     }
 }

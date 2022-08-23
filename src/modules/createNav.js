@@ -13,8 +13,9 @@ export function createNav() {
     header.innerHTML = `<h1 id='headerTitle'>TODO List</h1>
     <input id='searchbar' type='text' placeholder='Search'>`
     sidebar.innerHTML = `
-    <h1 id='assignmentTitle'>Assignments</h1>`
-
+    <h1 class='sidebarLabel' id='assignmentTitle'>Assignments</h1>`
+    const sideBarH1 = document.createElement('h1');
+    sideBarH1.innerHTML = `<h1 class='sidebarLabel' id='projectTitle'>My Projects</h1>`
     const sideButtonToday = ButtonFactory('todayBtn', 'sideBtns', 'Today')
     const sideButtonThisWeek = ButtonFactory('thisWeekBtn', 'sideBtns', 'This Week')
     const sideButtonCalendar = ButtonFactory('calendar', 'sideBtns', 'Calendar')
@@ -25,7 +26,7 @@ export function createNav() {
     sidebar.appendChild(sideButtonThisWeek)
     sidebar.appendChild(sideButtonCalendar)
 
-    sidebar.innerHTML +=`<h1 id='projectTitle'>My Projects</h1>`
+    sidebar.appendChild(sideBarH1)
     sidebar.appendChild(sideButtonOdin)
     sidebar.appendChild(sideButtonAdd)
 

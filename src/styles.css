@@ -43,6 +43,11 @@ body {
     text-align: center;
 }
 
+.sidebarLabel {
+    font-weight: bold;
+    font-size: 35px;
+}
+
 #sidebar > button {
     font-weight: bold;
     background-color: #E8E8E8;
@@ -63,4 +68,9 @@ body {
 #sidebar > ul {
     list-style: none;
     padding: 0%;
+}
+
+.pageContent {
+    grid-column: 2 / 5;
+    grid-row: 2 / 5;
 }

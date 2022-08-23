@@ -16,7 +16,17 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/home */ \"./src/modules/home.js\");\n/* harmony import */ var _modules_createNav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/createNav */ \"./src/modules/createNav.js\");\n\r\n\r\n \r\n(0,_modules_createNav__WEBPACK_IMPORTED_MODULE_1__.createNav)();\r\n(0,_modules_home__WEBPACK_IMPORTED_MODULE_0__.loadHomePage)();\n\n//# sourceURL=webpack://todo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_today__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/today */ \"./src/modules/today.js\");\n/* harmony import */ var _modules_createNav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/createNav */ \"./src/modules/createNav.js\");\n\r\n\r\n \r\n(0,_modules_createNav__WEBPACK_IMPORTED_MODULE_1__.createNav)();\r\n(0,_modules_today__WEBPACK_IMPORTED_MODULE_0__.loadTodayTasks)();\n\n//# sourceURL=webpack://todo/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/calendar.js":
+/*!*********************************!*\
+  !*** ./src/modules/calendar.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadCalender\": () => (/* binding */ loadCalender)\n/* harmony export */ });\nfunction loadCalender() {\r\n    \r\n}\n\n//# sourceURL=webpack://todo/./src/modules/calendar.js?");
 
 /***/ }),
 
@@ -26,17 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createNav\": () => (/* binding */ createNav)\n/* harmony export */ });\n/* harmony import */ var _pageLoad__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pageLoad */ \"./src/modules/pageLoad.js\");\n\r\n\r\nfunction createNav() {\r\n    const page = document.getElementById('content');\r\n    const sidebar = document.createElement('div');\r\n    const header = document.createElement('div');\r\n    const footer = document.createElement('div');\r\n\r\n    footer.className = 'footer';\r\n    header.className = 'header';\r\n    sidebar.id = 'sidebar';\r\n\r\n    header.innerHTML = `<h1 id='headerTitle'>TODO List</h1>\r\n    <input id='searchbar' type='text' placeholder='Search'>`\r\n    sidebar.innerHTML = `\r\n    <h1 id='assignmentTitle'>Assignments</h1>`\r\n\r\n    const sideButtonToday = ButtonFactory('todayBtn', 'sideBtns', 'Today')\r\n    const sideButtonThisWeek = ButtonFactory('thisWeekBtn', 'sideBtns', 'This Week')\r\n    const sideButtonCalendar = ButtonFactory('calendar', 'sideBtns', 'Calendar')\r\n    const sideButtonOdin = ButtonFactory('project', 'sideBtns', 'Odin');\r\n    const sideButtonAdd = ButtonFactory('addProject', 'sideBtn', 'Add Project');\r\n    \r\n    sidebar.appendChild(sideButtonToday)\r\n    sidebar.appendChild(sideButtonThisWeek)\r\n    sidebar.appendChild(sideButtonCalendar)\r\n\r\n    sidebar.innerHTML +=`<h1 id='projectTitle'>My Projects</h1>`\r\n    sidebar.appendChild(sideButtonOdin)\r\n    sidebar.appendChild(sideButtonAdd)\r\n\r\n    page.appendChild(header);\r\n    page.appendChild(sidebar);\r\n    page.appendChild(footer); \r\n}\r\n\r\nfunction ButtonFactory(id, classname, text) { \r\n    var button = document.createElement('button');\r\n    button.id = id;\r\n    button.className = classname;\r\n    button.textContent = text;\r\n    button.addEventListener('click', function() {(0,_pageLoad__WEBPACK_IMPORTED_MODULE_0__.pageLoad)(id)});\r\n    return button;\r\n    \r\n}\n\n//# sourceURL=webpack://todo/./src/modules/createNav.js?");
-
-/***/ }),
-
-/***/ "./src/modules/home.js":
-/*!*****************************!*\
-  !*** ./src/modules/home.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadHomePage\": () => (/* binding */ loadHomePage)\n/* harmony export */ });\nfunction loadHomePage() {\r\n    const page = document.getElementById('content');\r\n    \r\n\r\n}\n\n//# sourceURL=webpack://todo/./src/modules/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createNav\": () => (/* binding */ createNav)\n/* harmony export */ });\n/* harmony import */ var _pageLoad__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pageLoad */ \"./src/modules/pageLoad.js\");\n\r\n\r\nfunction createNav() {\r\n    const page = document.getElementById('content');\r\n    const sidebar = document.createElement('div');\r\n    const header = document.createElement('div');\r\n    const footer = document.createElement('div');\r\n\r\n    footer.className = 'footer';\r\n    header.className = 'header';\r\n    sidebar.id = 'sidebar';\r\n\r\n    header.innerHTML = `<h1 id='headerTitle'>TODO List</h1>\r\n    <input id='searchbar' type='text' placeholder='Search'>`\r\n    sidebar.innerHTML = `\r\n    <h1 class='sidebarLabel' id='assignmentTitle'>Assignments</h1>`\r\n    const sideBarH1 = document.createElement('h1');\r\n    sideBarH1.innerHTML = `<h1 class='sidebarLabel' id='projectTitle'>My Projects</h1>`\r\n    const sideButtonToday = ButtonFactory('todayBtn', 'sideBtns', 'Today')\r\n    const sideButtonThisWeek = ButtonFactory('thisWeekBtn', 'sideBtns', 'This Week')\r\n    const sideButtonCalendar = ButtonFactory('calendar', 'sideBtns', 'Calendar')\r\n    const sideButtonOdin = ButtonFactory('project', 'sideBtns', 'Odin');\r\n    const sideButtonAdd = ButtonFactory('addProject', 'sideBtn', 'Add Project');\r\n    \r\n    sidebar.appendChild(sideButtonToday)\r\n    sidebar.appendChild(sideButtonThisWeek)\r\n    sidebar.appendChild(sideButtonCalendar)\r\n\r\n    sidebar.appendChild(sideBarH1)\r\n    sidebar.appendChild(sideButtonOdin)\r\n    sidebar.appendChild(sideButtonAdd)\r\n\r\n    page.appendChild(header);\r\n    page.appendChild(sidebar);\r\n    page.appendChild(footer); \r\n}\r\n\r\nfunction ButtonFactory(id, classname, text) { \r\n    var button = document.createElement('button');\r\n    button.id = id;\r\n    button.className = classname;\r\n    button.textContent = text;\r\n    button.addEventListener('click', function() {(0,_pageLoad__WEBPACK_IMPORTED_MODULE_0__.pageLoad)(id)});\r\n    return button;\r\n    \r\n}\n\n//# sourceURL=webpack://todo/./src/modules/createNav.js?");
 
 /***/ }),
 
@@ -46,17 +46,37 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"pageLoad\": () => (/* binding */ pageLoad)\n/* harmony export */ });\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/modules/home.js\");\n/* harmony import */ var _projects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projects */ \"./src/modules/projects.js\");\n\r\n\r\n\r\nfunction pageLoad(page) {\r\n    const content = document.getElementById('content');\r\n    content.removeChild(content.childNodes[2])\r\n    if(page == 'todayBtn') {\r\n        return loadTodayTasks()\r\n    } else if (page == 'thisWeekBtn') {\r\n        return loadThisWeeksTasks()\r\n    } else if (page == 'calender') {\r\n        return loadCalender()\r\n    } else if(page == 'project') {\r\n        return (0,_projects__WEBPACK_IMPORTED_MODULE_1__.loadProjects)()\r\n    } else {\r\n       return (0,_home__WEBPACK_IMPORTED_MODULE_0__.loadHomePage)()\r\n    }\r\n}\n\n//# sourceURL=webpack://todo/./src/modules/pageLoad.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"pageLoad\": () => (/* binding */ pageLoad)\n/* harmony export */ });\n/* harmony import */ var _today__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./today */ \"./src/modules/today.js\");\n/* harmony import */ var _thisweek__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./thisweek */ \"./src/modules/thisweek.js\");\n/* harmony import */ var _calendar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./calendar */ \"./src/modules/calendar.js\");\n\r\n\r\n\r\n\r\nfunction pageLoad(page) {\r\n    const content = document.getElementById('content');\r\n    content.removeChild(content.childNodes[3]) //is there a better way to remove current content? \r\n    if(page == 'todayBtn') {\r\n        return (0,_today__WEBPACK_IMPORTED_MODULE_0__.loadTodayTasks)()\r\n    } else if (page == 'thisWeekBtn') {\r\n        return (0,_thisweek__WEBPACK_IMPORTED_MODULE_1__.loadThisWeeksTasks)()\r\n    } else if (page == 'calender') {\r\n        return (0,_calendar__WEBPACK_IMPORTED_MODULE_2__.loadCalender)()\r\n    } else if(page == 'project') {\r\n        return loadProjects()\r\n    } else {\r\n        (0,_today__WEBPACK_IMPORTED_MODULE_0__.loadTodayTasks)()\r\n    }\r\n}\n\n//# sourceURL=webpack://todo/./src/modules/pageLoad.js?");
 
 /***/ }),
 
-/***/ "./src/modules/projects.js":
+/***/ "./src/modules/tasks.js":
+/*!******************************!*\
+  !*** ./src/modules/tasks.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createTask\": () => (/* binding */ createTask)\n/* harmony export */ });\nfunction createTask() {\r\n    const page = document.getElementById('content');\r\n\r\n    const taskFormBox = document.createElement('div');\r\n    taskFormBox.innerHTML =`<form id='taskForm'>\r\n    <input id='newTaskDescription' placeholder='Description'>\r\n    <h2>Task Prioity</h2>\r\n    Low<input type=radio id='newTaskPrioLow' name='newTaskPrio'>\r\n    Medium<input type=radio id='newTaskPrioMedium' name='newTaskPrio'>\r\n    High<input type=radio id='newTaskPrioHigh' name='newTaskPrio'>\r\n    <h2>Completed</h2>\r\n    True<input id='newTaskCompletedTrue' name='newTaskCompleted'>\r\n    False<input id='newTaskCompletedFalse'name='newTaskCompleted'>\r\n    <button onlcick='addNewTask()' id='addNewTaskBtn'>Add Task</button>\r\n    </form>`\r\n\r\n    page.appendChild(taskFormBox);\r\n}\r\n\r\nfunction addNewTask() {\r\n    \r\n    let task = Task()\r\n}\r\n\r\nfunction Task(id, description, priority, completed) {\r\n    this.id = id;\r\n    this.description = description;\r\n    this.priority = priority;\r\n    this.completed = completed;\r\n}\n\n//# sourceURL=webpack://todo/./src/modules/tasks.js?");
+
+/***/ }),
+
+/***/ "./src/modules/thisweek.js":
 /*!*********************************!*\
-  !*** ./src/modules/projects.js ***!
+  !*** ./src/modules/thisweek.js ***!
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createProject\": () => (/* binding */ createProject),\n/* harmony export */   \"loadProjects\": () => (/* binding */ loadProjects)\n/* harmony export */ });\nlet listOfProjects = [];\r\nfunction Project(title, description, list) {\r\n    this.title = title;\r\n    this.description = description;\r\n    this.list = list;\r\n\r\n    this.addTask = function(task) {\r\n        list.push(task);\r\n    }\r\n    this.removeTask = function(task) {\r\n        this.list = this.list.filter(listItem => listItem != task);\r\n    }\r\n    this.deleteProject = function(projectName) {\r\n        listOfProjects = listOfProjects.filter(name => name != projectName)\r\n    }\r\n}\r\nfunction loadProjects() {\r\n    \r\n}\r\nfunction createProject() {\r\n\r\n    \r\n    //add it to the master list of projects\r\n    listOfProjects.push(this)\r\n}\n\n//# sourceURL=webpack://todo/./src/modules/projects.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadThisWeeksTasks\": () => (/* binding */ loadThisWeeksTasks)\n/* harmony export */ });\n/* harmony import */ var _tasks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tasks */ \"./src/modules/tasks.js\");\n\r\nfunction loadThisWeeksTasks() {\r\n    const page = document.getElementById('content');\r\n\r\n    const thisWeekPage = document.createElement('div');\r\n    thisWeekPage.id = 'thisWeekPage';\r\n    thisWeekPage.className = 'pageContent';\r\n\r\n    thisWeekPage.innerHTML = `<h1>This Weeks Tasks</h1>\r\n    <button onclick='createTask()' id='addTaskBtn'>Add New Task</button>`\r\n    page.appendChild(thisWeekPage);\r\n}\n\n//# sourceURL=webpack://todo/./src/modules/thisweek.js?");
+
+/***/ }),
+
+/***/ "./src/modules/today.js":
+/*!******************************!*\
+  !*** ./src/modules/today.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadTodayTasks\": () => (/* binding */ loadTodayTasks)\n/* harmony export */ });\n/* harmony import */ var _tasks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tasks */ \"./src/modules/tasks.js\");\n\r\n\r\nfunction loadTodayTasks() {\r\n    const page = document.getElementById('content');\r\n\r\n    const todayPage = document.createElement('div');\r\n    todayPage.id = 'todayPage';\r\n    todayPage.className = 'pageContent';\r\n\r\n    todayPage.innerHTML = `<h1> Todays Tasks</h1>\r\n    <button onclick=createTask()' id='addTaskBtn'>Add New Task</button>`\r\n    page.appendChild(todayPage);\r\n}\n\n//# sourceURL=webpack://todo/./src/modules/today.js?");
 
 /***/ })
 
