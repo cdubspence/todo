@@ -1,6 +1,8 @@
 import { createTask } from "./tasks";
 
 export function loadTodayTasks() {
+    const todaysTasks = [];
+    console.log(todaysTasks, 'called from today')
     const page = document.getElementById('content');
     const addBtn = document.createElement('button');
     const taskArea = document.createElement('div');
@@ -14,7 +16,7 @@ export function loadTodayTasks() {
     todayPage.id = 'todayPage';
     todayPage.className = 'pageContent';
 
-
+    taskArea.textContent = createTask.taskList;
     todayPage.innerHTML = `<h1> Todays Tasks</h1>`
     todayPage.appendChild(taskArea)
     todayPage.appendChild(addBtn)
