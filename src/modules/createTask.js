@@ -16,7 +16,7 @@ export function createTask() {
     <h2>Completed</h2>
     True<input type='radio' id='newTaskCompletedTrue' name='newTaskCompleted' value='true'>
     False<input type='radio' id='newTaskCompletedFalse'name='newTaskCompleted' value='false'>
-    <button onlcick='addNewTask(); return false' id='addNewTaskBtn'>Add Task</button>
+    <button id='addNewTaskBtn'>Add Task</button>
     <button id='formCloseBtn'>X</button>
     </form>`
 
@@ -24,25 +24,17 @@ export function createTask() {
     page.style.opacity = '.5'
     document.body.appendChild(taskFormBox)
     taskFormBox.style.display = 'block'
-
-
-    function Task(id, description, priority, completed) {
-        this.id = id;
-        this.description = description;
-        this.priority = priority;
-        this.completed = completed;
-    }
     
-    function addNewTask() {
-        let tasksList = []
-        let taskDescription = document.getElementById('newTaskDescription').value;
-        let taskPrio = document.querySelector(`name='newTaskPrio'`).value;
-        let taskCompleted = document.querySelector(`name='newTaskCompleted'`).value;
-        let task = Task(1, taskDescription, taskPrio, taskCompleted);
-        //check if its correct
-        console.log(task, 'called from tasks')
-        tasksList.push(task);
-    }
+    // function addNewTask() {
+    //     let tasksList = []
+    //     let taskDescription = document.getElementById('newTaskDescription').value;
+    //     let taskPrio = document.querySelector(`name='newTaskPrio'`).value;
+    //     let taskCompleted = document.querySelector(`name='newTaskCompleted'`).value;
+    //     let task = Task(1, taskDescription, taskPrio, taskCompleted);
+    //     //check if its correct
+    //     console.log(task, 'called from tasks')
+    //     tasksList.push(task);
+    // }
 }
 
 
