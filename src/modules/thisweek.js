@@ -1,4 +1,5 @@
-import { createTask } from "./tasks";
+import { createTask } from "./createTask";
+
 export function loadThisWeeksTasks() {
     const page = document.getElementById('content');
 
